@@ -1,0 +1,23 @@
+language: generic
+
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t lha5/my-schedule -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true lha5/my-schedule npm run test
+
+after_success:
+  - docker build -t lha5/my-schedule-client ./client
+  - docker build -t lha5/my-schedule-server ./server
+  - docker build -t lha5/my-schedule-nginx ./nginx
+
+  - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+
+  - docker lha5/my-schedule-client
+  - docker lha5/my-schedule-server
+  - docker lha5/my-schedule-nginx
