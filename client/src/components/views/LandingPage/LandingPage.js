@@ -44,7 +44,7 @@ function LandingPage() {
       <div className="catch-phrase">이제는 마감에 쫒길 수 없다!</div>
       <div className="catch-phrase">지겨운 마감도 싫다!</div>
       <div className="desc-this">
-        <p>Time Attack에서 이 문제를 해결해보세요.</p>
+        <p>My Schedule에서 이 문제를 해결해보세요.</p>
         <p>마감 챌린지와 스케쥴 관리로 마감이 더 이상 무섭지 않습니다.</p>
       </div>
     </Container>

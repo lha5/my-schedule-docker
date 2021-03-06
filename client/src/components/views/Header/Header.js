@@ -61,7 +61,7 @@ function Header() {
     <Container>
       <div className="logo-container">
         <Link to="/">
-          Time Attack
+          My Schedule
         </Link>
       </div>
       <NavBar />
