@@ -1,4 +1,6 @@
-FROM node:alpine
+FROM node:10
+
+ENV CHOKIDAR_USEPOLLING=true
 
 WORKDIR /app
 
